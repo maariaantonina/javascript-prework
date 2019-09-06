@@ -7,9 +7,11 @@ let playerMove = 'nieznany ruch';
 if (playerInput == '1') {
     playerMove = 'kamień';
 } else if (playerInput == '2') {
-    playerMove = 'nożyczki';
+    playerMove = 'papier';
+} else if (playerInput == '3') {
+    playerMove = 'nożyce';
 } else {
-    playerMove = 'papier'
+    playerMove = 'nieprawidłowy wybór :(';
 }
 
 printMessage('Twój ruch to: ' + playerMove);
@@ -22,10 +24,46 @@ let computerMove = 'nieznany ruch';
 if (randomNumber == 1) {
     computerMove = 'kamień';
 } else if (randomNumber == 2) {
-    computerMove = 'nożyczki';
-} else {
-    computerMove = 'papier'
+    computerMove = 'papier';
+} else if (randomNumber == 3) {
+    computerMove = 'nożyce';
 }
 
+printMessage('Ruch komputera to: ' + computerMove);
 
-printMessage('Mój ruch to: ' + computerMove);
+/*if (playerMove == computerMove) {
+    printMessage('Remis!');
+} else if ((playerMove = 'kamień' && computerMove == 'nożyce') || (playerMove == 'papier' && computerMove == 'kamień') || (playerMove == 'nożyce' && computerMove == 'papier')) {
+    printMessage('Wygrałeś');
+} else if ((playerMove = 'kamień' && computerMove == 'papier') || (playerMove == 'papier' && computerMove == 'nożyce') || (playerMove == 'nożyce' && computerMove == 'kamień')) {
+    printMessage('Przegrałeś!');
+}*/
+
+
+if (playerMove == 'kamień') {
+    if (computerMove == playerMove) {
+        printMessage('Remis!');
+    } else if (computerMove == 'nożyce') {
+        printMessage('Wygrałeś!');
+    } else {
+        printMessage('Przegrałeś!');
+    }
+} else if (playerMove == 'nożyce') {
+    if (computerMove == playerMove) {
+        printMessage('Remis!');
+    } else if (computerMove == 'papier') {
+        printMessage('Wygrałeś!');
+    } else {
+        printMessage('Przegrałeś!');
+    }
+} else if (playerMove == 'papier') {
+    if (computerMove == playerMove) {
+        printMessage('Remis!');
+    } else if (computerMove == 'kamień') {
+        printMessage('Wygrałeś!');
+    } else {
+        printMessage('Przegrałeś!');
+    }
+} else {
+    printMessage('Spróbuj jeszcze raz');
+}
