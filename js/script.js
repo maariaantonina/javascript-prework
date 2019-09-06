@@ -12,32 +12,15 @@ function getMoveName(argMoveId) {
 }
 
 function displayResult(argComputerMove, argPlayerMove) {
-    if (argPlayerMove == 'kamień') {
-        if (argComputerMove == argPlayerMove) {
-            printMessage('Remis!');
-        } else if (argComputerMove == 'nożyce') {
-            printMessage('Wygrałeś!');
-        } else {
-            printMessage('Przegrałeś!');
-        }
-    } else if (argPlayerMove == 'nożyce') {
-        if (argComputerMove == argPlayerMove) {
-            printMessage('Remis!');
-        } else if (argComputerMove == 'papier') {
-            printMessage('Wygrałeś!');
-        } else {
-            printMessage('Przegrałeś!');
-        }
-    } else if (argPlayerMove == 'papier') {
-        if (argComputerMove == argPlayerMove) {
-            printMessage('Remis!');
-        } else if (argComputerMove == 'kamień') {
-            printMessage('Wygrałeś!');
-        } else {
-            printMessage('Przegrałeś!');
-        }
+    printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
+    if (argComputerMove == argPlayerMove) {
+        printMessage('Remis!');
+    } else if ((argPlayerMove == 'kamień' && argComputerMove == 'nożyce') || (argPlayerMove == 'papier' && argComputerMove == 'kamień') || (argPlayerMove == 'nożyce' && argComputerMove == 'papier')) {
+        printMessage('Wygrywasz!');
+    } else if ((argPlayerMove == 'kamień' && argComputerMove == 'papier') || (argPlayerMove == 'papier' && argComputerMove == 'nożyce') || (argPlayerMove == 'nożyce' && argComputerMove == "kamień")) {
+        printMessage('Przegrywasz!');
     } else {
-        printMessage('Spróbuj jeszcze raz');
+        printMessage('spróbuj wpisać właściwy numer');
     }
 }
 
