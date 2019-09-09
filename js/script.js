@@ -31,39 +31,10 @@ if (randomNumber == 1) {
 
 printMessage('Ruch komputera to: ' + computerMove);
 
-/*if (playerMove == computerMove) {
+if (playerMove == computerMove) {
     printMessage('Remis!');
-} else if ((playerMove = 'kamień' && computerMove == 'nożyce') || (playerMove == 'papier' && computerMove == 'kamień') || (playerMove == 'nożyce' && computerMove == 'papier')) {
+} else if ((playerMove === 'kamień' && computerMove === 'nożyce') || (playerMove === 'papier' && computerMove === 'kamień') || (playerMove === 'nożyce' && computerMove === 'papier')) {
     printMessage('Wygrałeś');
-} else if ((playerMove = 'kamień' && computerMove == 'papier') || (playerMove == 'papier' && computerMove == 'nożyce') || (playerMove == 'nożyce' && computerMove == 'kamień')) {
+} else if ((playerMove === 'kamień' && computerMove === 'papier') || (playerMove === 'papier' && computerMove === 'nożyce') || (playerMove === 'nożyce' && computerMove === 'kamień')) {
     printMessage('Przegrałeś!');
-}*/
-
-
-if (playerMove == 'kamień') {
-    if (computerMove == playerMove) {
-        printMessage('Remis!');
-    } else if (computerMove == 'nożyce') {
-        printMessage('Wygrałeś!');
-    } else {
-        printMessage('Przegrałeś!');
-    }
-} else if (playerMove == 'nożyce') {
-    if (computerMove == playerMove) {
-        printMessage('Remis!');
-    } else if (computerMove == 'papier') {
-        printMessage('Wygrałeś!');
-    } else {
-        printMessage('Przegrałeś!');
-    }
-} else if (playerMove == 'papier') {
-    if (computerMove == playerMove) {
-        printMessage('Remis!');
-    } else if (computerMove == 'kamień') {
-        printMessage('Wygrałeś!');
-    } else {
-        printMessage('Przegrałeś!');
-    }
-} else {
-    printMessage('Spróbuj jeszcze raz');
 }
