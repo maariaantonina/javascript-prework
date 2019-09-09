@@ -58,7 +58,13 @@ function playGame(playerInput) {
     //printMessage('Ruch komputera to: ' + computerMove + '.');
 
     displayResult(computerMove, playerMove);
-    printMessage(computerWon + ' : ' + playerWon);
+    printMessage('Runda ' + roundNumber + ' - ' + computerWon + ' : ' + playerWon);
+    if (roundNumber > 9) {
+        printMessage('Koniec gry! Zagraj jeszcze raz!');
+        roundNumber = 0;
+        computerWon = 0;
+        playerWon = 0;
+    }
 
 
 }
