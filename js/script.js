@@ -65,8 +65,6 @@ function playGame(playerInput) {
         computerWon = 0;
         playerWon = 0;
     }
-
-
 }
 
 document.getElementById('play-rock').addEventListener('click', function () { playGame(1); });
