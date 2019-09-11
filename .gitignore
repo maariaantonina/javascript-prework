@@ -89,3 +89,6 @@ typings/
 
 # Css folder
 css/
+
+#Prettierignore
+.prettierignore
