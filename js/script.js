@@ -19,7 +19,7 @@
             }
         }*/
 
-        function displayResult(argComputerMove, argPlayerMove) {
+        /*function displayResult(argComputerMove, argPlayerMove) {
             if (argComputerMove === argPlayerMove) {
                 printMessage(
                     'Komputer zagrał ' + argComputerMove + ', Ty również.'
@@ -60,7 +60,7 @@
                 console.log(computerWon);
                 console.log(playerWon);
             }
-        }
+        }*/
 
         const playerMove = (function(argMoveId) {
             if (argMoveId == 1) {
@@ -89,7 +89,51 @@
 
         console.log(computerMove);
 
-        displayResult(computerMove, playerMove);
+        //displayResult(computerMove, playerMove);
+
+        (function(argComputerMove, argPlayerMove) {
+            if (argComputerMove === argPlayerMove) {
+                printMessage(
+                    'Komputer zagrał ' + argComputerMove + ', Ty również.'
+                );
+                printMessage('Remis!');
+                console.log(computerWon);
+                console.log(playerWon);
+            } else if (
+                (argPlayerMove === 'kamień' && argComputerMove === 'nożyce') ||
+                (argPlayerMove === 'papier' && argComputerMove === 'kamień') ||
+                (argPlayerMove === 'nożyce' && argComputerMove === 'papier')
+            ) {
+                printMessage(
+                    'Komputer zagrał ' +
+                        argComputerMove +
+                        ', a Ty ' +
+                        argPlayerMove +
+                        '.'
+                );
+                printMessage('Wygrywasz rundę!');
+                playerWon++;
+                console.log(computerWon);
+                console.log(playerWon);
+            } else if (
+                (argPlayerMove === 'kamień' && argComputerMove === 'papier') ||
+                (argPlayerMove === 'papier' && argComputerMove === 'nożyce') ||
+                (argPlayerMove === 'nożyce' && argComputerMove === 'kamień')
+            ) {
+                printMessage(
+                    'Komputer zagrał ' +
+                        argComputerMove +
+                        ', a Ty ' +
+                        argPlayerMove +
+                        '.'
+                );
+                printMessage('Przegrywasz rundę!');
+                computerWon++;
+                console.log(computerWon);
+                console.log(playerWon);
+            }
+        })(computerMove, playerMove);
+
         printMessage(
             'Runda ' + roundNumber + ' - ' + computerWon + ' : ' + playerWon
         );
