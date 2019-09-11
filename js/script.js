@@ -7,60 +7,7 @@
         clearMessages();
 
         roundNumber++;
-        console.log(roundNumber);
-
-        /*function getMoveName(argMoveId) {
-            if (argMoveId == 1) {
-                return 'kamień';
-            } else if (argMoveId == 2) {
-                return 'papier';
-            } else if (argMoveId == 3) {
-                return 'nożyce';
-            }
-        }*/
-
-        /*function displayResult(argComputerMove, argPlayerMove) {
-            if (argComputerMove === argPlayerMove) {
-                printMessage(
-                    'Komputer zagrał ' + argComputerMove + ', Ty również.'
-                );
-                printMessage('Remis!');
-                console.log(computerWon);
-                console.log(playerWon);
-            } else if (
-                (argPlayerMove === 'kamień' && argComputerMove === 'nożyce') ||
-                (argPlayerMove === 'papier' && argComputerMove === 'kamień') ||
-                (argPlayerMove === 'nożyce' && argComputerMove === 'papier')
-            ) {
-                printMessage(
-                    'Komputer zagrał ' +
-                        argComputerMove +
-                        ', a Ty ' +
-                        argPlayerMove +
-                        '.'
-                );
-                printMessage('Wygrywasz rundę!');
-                playerWon++;
-                console.log(computerWon);
-                console.log(playerWon);
-            } else if (
-                (argPlayerMove === 'kamień' && argComputerMove === 'papier') ||
-                (argPlayerMove === 'papier' && argComputerMove === 'nożyce') ||
-                (argPlayerMove === 'nożyce' && argComputerMove === 'kamień')
-            ) {
-                printMessage(
-                    'Komputer zagrał ' +
-                        argComputerMove +
-                        ', a Ty ' +
-                        argPlayerMove +
-                        '.'
-                );
-                printMessage('Przegrywasz rundę!');
-                computerWon++;
-                console.log(computerWon);
-                console.log(playerWon);
-            }
-        }*/
+        console.log('Runda: ' + roundNumber);
 
         const playerMove = (function(argMoveId) {
             if (argMoveId == 1) {
@@ -73,9 +20,7 @@
         })(playerInput);
 
         const randomNumber = Math.floor(Math.random() * 3 + 1);
-        console.log('Gracz zagrał ' + playerInput);
-        console.log('Wylosowana liczba to: ' + randomNumber);
-        console.log(playerMove);
+        console.log('Gracz zagrał ' + playerInput + ' czyli ' + playerMove);
 
         const computerMove = (function(argMoveId) {
             if (argMoveId == 1) {
@@ -87,9 +32,9 @@
             }
         })(randomNumber);
 
-        console.log(computerMove);
-
-        //displayResult(computerMove, playerMove);
+        console.log(
+            'Wylosowana liczba to: ' + randomNumber + ' czyli ' + computerMove
+        );
 
         (function(argComputerMove, argPlayerMove) {
             if (argComputerMove === argPlayerMove) {
