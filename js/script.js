@@ -9,7 +9,7 @@
         roundNumber++;
         console.log(roundNumber);
 
-        function getMoveName(argMoveId) {
+        /*function getMoveName(argMoveId) {
             if (argMoveId == 1) {
                 return 'kamień';
             } else if (argMoveId == 2) {
@@ -17,7 +17,7 @@
             } else if (argMoveId == 3) {
                 return 'nożyce';
             }
-        }
+        }*/
 
         function displayResult(argComputerMove, argPlayerMove) {
             if (argComputerMove === argPlayerMove) {
@@ -62,13 +62,30 @@
             }
         }
 
-        const playerMove = getMoveName(playerInput);
+        const playerMove = function(playerInput) {
+            if (playerInput == 1) {
+                return 'kamień';
+            } else if (playerInput == 2) {
+                return 'papier';
+            } else if (playerInput == 3) {
+                return 'nożyce';
+            }
+        };
 
         const randomNumber = Math.floor(Math.random() * 3 + 1);
-
+        console.log('Gracz zagrał ' + playerInput);
         console.log('Wylosowana liczba to: ' + randomNumber);
+        console.log(playerMove);
 
-        const computerMove = getMoveName(randomNumber);
+        const computerMove = function(randomNumber) {
+            if (randomNumber == 1) {
+                return 'kamień';
+            } else if (randomNumber == 2) {
+                return 'papier';
+            } else if (randomNumber == 3) {
+                return 'nożyce';
+            }
+        };
 
         displayResult(computerMove, playerMove);
         printMessage(
